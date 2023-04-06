@@ -1,7 +1,7 @@
 import './App.css'
 import { NavBar } from './components/NavBar'
 import { ItemlistContainer } from './components/ItemlistContainer'
-import { Counter } from './components/Counter'
+
 
 function App() {
  
@@ -9,13 +9,7 @@ function App() {
 <>
   <NavBar />
   <ItemlistContainer greeting={"Bienvenido"}/>
-  
-
-
 </>
-
-
-
  )
 }
 
