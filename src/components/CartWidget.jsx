@@ -1,13 +1,16 @@
 import React from 'react'
 import cart from "../assets/img/cart.png"
-import {  Image } from '@chakra-ui/react'
+import { Image } from '@chakra-ui/react'
+import { Counter } from './Counter'
 
- export function CartWidget() {
+
+
+export function CartWidget() {
   return (
-      <> 
-      <Image src={cart} boxSize={"100px"} m={"auto"} mt="10px" />
-       <h1>0</h1>
-       </>
+    <>
+      <Image src={cart} boxSize={"50px"} />
+      <Counter />
+    </>
 
   )
 }
