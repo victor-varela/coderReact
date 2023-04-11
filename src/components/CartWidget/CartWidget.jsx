@@ -1,7 +1,7 @@
 import React from 'react'
-import cart from "../assets/img/cart.png"
+import cart from '../../assets/img/cart.png'
 import { Image } from '@chakra-ui/react'
-import { Counter } from './Counter'
+import { Counter } from '../Counter/Counter'
 
 
 
