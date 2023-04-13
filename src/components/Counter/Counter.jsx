@@ -17,8 +17,8 @@ export const Counter = () => {
   return (
     <>
         <p>{contador}</p>
-        <Button onClick={handleContador}>Agregar</Button>
-        <Button onClick={restar}>Quitar</Button>
+        <Button onClick={handleContador}>+</Button>
+        <Button onClick={restar}>-</Button>
 
     </>
   )
