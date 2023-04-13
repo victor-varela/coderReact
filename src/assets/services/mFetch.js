@@ -249,3 +249,16 @@ let products = [
     })
  
 }
+// export const mFetch=()=>{
+//   setTimeout(()=>{
+
+//     fetch('https://fakestoreapi.com/products/1')
+//     .then(res=> res.json())
+//     .then(data=> console.log(data))
+//     .catch (error => console.log(error))
+
+  
+//   },5000)
+  
+
+// }
