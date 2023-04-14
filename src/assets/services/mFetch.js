@@ -240,25 +240,30 @@ let products = [
       }
     }
   ]
- export const mFetch=()=>{
-    return new Promise ((res, rej)=>{
-        setTimeout(()=>{
-            res(products)
+//  export const mFetch=()=>{
+//     return new Promise ((res, rej)=>{
+//         setTimeout(()=>{
+//             res(products)
             
-          } ,2000)      
-    })
+//           } ,2000)      
+//     })
  
+//}
+export async function mFetch(){
+    try{
+        const response= await fetch('https://fakestoreapi.com/products')
+        const data = await response.json()
+        return data
+    }
+
+    catch{
+      console.error(error)
+
+    }
+   
+
+  
+  
+  
+
 }
-// export const mFetch=()=>{
-//   setTimeout(()=>{
-
-//     fetch('https://fakestoreapi.com/products/1')
-//     .then(res=> res.json())
-//     .then(data=> console.log(data))
-//     .catch (error => console.log(error))
-
-  
-//   },5000)
-  
-
-// }

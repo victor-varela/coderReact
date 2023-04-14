@@ -4,12 +4,18 @@ import { mFetch } from "../../assets/services/mFetch"
 import { useEffect, useState } from 'react'
 export const ItemlistContainer = ({ greeting }) => {
   const [products, setProducts] = useState([])
+  //hacer llamada a la api desde otro componente
+  //hacer itemlist/counter
   useEffect(() => {
-    mFetch()
-      .then(resultado => {
-        setProducts(resultado)
-      })
-      .catch(error => console.log(error))
+    setTimeout(() => {
+      mFetch()
+        .then(products => {
+          setProducts(products)
+        })//aca esta la verdad de la milanesa, aca guardo el valor de products y lo hago persistente porque es un estado declarado en el componente
+
+
+    }, 5000)
+
 
   }, [])
   console.log(products)//¿me los esta guardando, como?
@@ -17,35 +23,35 @@ export const ItemlistContainer = ({ greeting }) => {
   return (
     <>
       {products.map(({ id, price, title, descprition, image }) =>
-              <Card maxW='sm' key={id}>
-                <CardBody>
-                  <Image
-                    src={image}
-                    alt=""
-                    borderRadius='lg'
-                  />
-                  <Stack mt='6' spacing='3'>
-                    <Heading size='md'>{title}</Heading>
-                    <Text>
-                      {descprition}
-                    </Text>
-                    <Text color='blue.600' fontSize='2xl'>
-                      ${price}
-                    </Text>
-                  </Stack>
-                </CardBody>
-                <Divider />
-                <CardFooter>
-                  <ButtonGroup spacing='2'>
-                    <Button variant='solid' colorScheme='blue'>
-                      Buy now
-                    </Button>
-                    <Button variant='ghost' colorScheme='blue'>
-                      Add to cart
-                    </Button>
-                  </ButtonGroup>
-                </CardFooter>
-              </Card>)}
+        <Card maxW='sm' key={id}>
+          <CardBody>
+            <Image
+              src={image}
+              alt=""
+              borderRadius='lg'
+            />
+            <Stack mt='6' spacing='3'>
+              <Heading size='md'>{title}</Heading>
+              <Text>
+                {descprition}
+              </Text>
+              <Text color='blue.600' fontSize='2xl'>
+                ${price}
+              </Text>
+            </Stack>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <ButtonGroup spacing='2'>
+              <Button variant='solid' colorScheme='blue'>
+                Buy now
+              </Button>
+              <Button variant='ghost' colorScheme='blue'>
+                Add to cart
+              </Button>
+            </ButtonGroup>
+          </CardFooter>
+        </Card>)}
 
       <h1>{greeting}</h1>
     </>
