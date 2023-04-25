@@ -7,22 +7,24 @@ export function NavBar() {
   return (
     <>
       <Box display={"flex"} flexDirection={"row"} justifyContent={"center"} alignItems={"center"}>
-        <Box boxSize={"100px"} display={"flex"} flexDirection={"column"} justifyContent={"center"}>
-          <Image src={logo} alt='Logo' />
-        </Box>
+        <Link to="/">
+          <Box boxSize={"100px"} display={"flex"} flexDirection={"column"} justifyContent={"center"}>
+            <Image src={logo} alt='Logo' />
+          </Box>
+        </Link>
         <Box>
           <NavLink to="/categoria/electronics">
-            <Button p="10px" colorScheme='blue'>Mochilas</Button>
+            <Button p="10px" colorScheme='blue'>Electronica</Button>
           </NavLink>
-          <NavLink to="/categoria/tazas">
-            <Button p="10px" colorScheme='blue'>Tazas</Button>
+          <NavLink to="/categoria/women's clothing">
+            <Button p="10px" colorScheme='blue'>Ropa Femenina</Button>
           </NavLink>
-          <NavLink to="/categoria/botellas">
-            <Button p="10px" colorScheme='blue'>Botellas</Button>
+          <NavLink to="/categoria/men's clothing">
+            <Button p="10px" colorScheme='blue'>Ropa Masculina</Button>
           </NavLink>
-          <Link to="/">
-            <Button p="10px" colorScheme='blue'>HOME</Button>
-          </Link>
+          <NavLink to="/categoria/jewelery">
+            <Button p="10px" colorScheme='blue'>Joyeria</Button>
+          </NavLink>
         </Box>
         <Box display={"flex"}>
           <CartWidget />

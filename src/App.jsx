@@ -11,12 +11,11 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
-        <Route path='/' element={<ItemlistContainer greeting={"Bienvenido"} />} />
-        <Route path='/categoria/:cid' element={<ItemlistContainer greeting={"Bienvenido"} />} />
+        <Route path='/' element={<ItemlistContainer greeting={"HOME"} />} />
+        <Route path='/categoria/:cid' element={<ItemlistContainer  />} />
         <Route path='/detail/:pid' element={<ItemDetailContainer />} />
         <Route path='*' element={<Navigate to="/" />} />
       </Routes>
-      <Counter />
     </Router>
   )
 }

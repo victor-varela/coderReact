@@ -4,21 +4,21 @@ import { Button, Box } from '@chakra-ui/react'
 
 
 export const Counter = () => {
-    const [contador, setContador]= useState(0)
-    const handleContador =()=>{
-        setContador(contador +1)
-    }
-    const restar =()=>{
-      setContador(contador -1)
+  const [contador, setContador] = useState(1)
+  const handleContador = () => {
+    setContador(contador + 1)
+  }
+  const restar = () => {
+    setContador(contador - 1)
   }
 
-    //hacer contador aumenta y disminuye- listo
-    
+  //hacer contador aumenta y disminuye- listo
+
   return (
     <>
-        <p>{contador}</p>
-        <Button onClick={handleContador}>+</Button>
-        <Button onClick={restar}>-</Button>
+      <Button size="lg" border="2px"  borderColor={'blue.200'} onClick={handleContador}>+ 1</Button>
+      <p>{contador}</p>
+      <Button size="lg" border="2px" borderColor={'blue.200'} onClick={restar}>- 1</Button>
 
     </>
   )
