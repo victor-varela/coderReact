@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { Button, Box } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 
 
 export const Counter = ({onAdd}) => {

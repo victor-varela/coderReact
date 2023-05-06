@@ -9,24 +9,20 @@ export const ItemDetailContainer = () => {
     const [item, setItem] = useState()
     const [isloading, setIsLoading] = useState(true)
     const { pid } = useParams()
-    console.log(`funciona id producto:${pid}`)
-    const itemId = parseInt(pid)
-    console.log(itemId)
-    console.log(item)
 
     //useEffect traer el producto, guardar en el estado
     useEffect(() => {
         setTimeout(() => {
             mFetch()
                 .then(item => {
-                    setItem(item.find(i => i.id === itemId))
+                    setItem(item.find(i => i.id === parseInt(pid)))
                 })
                 .finally(() => setIsLoading(false))
 
         }, 2000)
 
     }, [])
-    console.log(`estoy en detail container ${item}`)
+
     //hacer is loading. siempre
     return (
         <div>
