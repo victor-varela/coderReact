@@ -23,7 +23,7 @@ export const ItemDetail = ({ item }) => {
 					
 					const onAdd = (cantidad) => {
 						// { ...item, cantidad }
-						addToCart(item, cantidad ) 
+						addToCart(item, cantidad) 
 						setIsCant(true);
 					};
 					return (
