@@ -17,14 +17,17 @@ export const CartContextProvider = ({children}) => {
   const addToCart =(item, cantidad)=>{
     //spread operator para que renderice y asi muestra el cart actualizado
     const newObj = {...item, cantidad}
-    console.log(newObj)
-  
-    if(isInCart(newObj.id)){
-        let newItem={...item,cantidad:item.cantidad + cantidad}
-      
-      console.log("esta repetido")
-      console.log(newItem)
-    setCartList([...cartList, newItem])
+      if(isInCart(newObj.id)){
+        
+      const carritoActualizado = cartList.map((prod)=>{
+            if(prod.id === item.id){
+              return {...prod, cantidad:prod.cantidad + cantidad}
+            }else{
+              return prod
+            }
+
+      })
+        setCartList([...carritoActualizado])
     }else {
       
       setCartList([...cartList, newObj])
