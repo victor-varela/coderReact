@@ -3,13 +3,23 @@ import { useState } from 'react'
 import { Button } from '@chakra-ui/react'
 
 
-export const Counter = ({onAdd}) => {
+export const Counter = ({onAdd, stock}) => {
   const [contador, setContador] = useState(1)
   const handleContador = () => {
-    setContador(contador + 1)
+    if(contador <= stock){
+      
+      setContador(contador + 1)
+    }else{
+      setContador(contador)
+    }
+
   }
   const restar = () => {
-    setContador(contador - 1)
+    if(contador===1){
+      setContador(contador)
+    }else{
+      setContador(contador - 1)
+    }
   }
 
   //hacer contador aumenta y disminuye- listo

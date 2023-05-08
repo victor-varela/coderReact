@@ -20,7 +20,6 @@ import { useCartContext } from "../../context/CartContext";
 export const ItemDetail = ({ item }) => {
 					const [isCant, setIsCant] = useState(false);
 					const {addToCart}= useCartContext()
-					
 					const onAdd = (cantidad) => {
 						// { ...item, cantidad }
 						addToCart(item, cantidad) 
@@ -39,12 +38,15 @@ export const ItemDetail = ({ item }) => {
 													<Text color="blue.600" fontSize="2xl">
 														${item.price}
 													</Text>
+													<Text color="blue.600" fontSize="2xl">
+														Stock{item.rating.count}
+													</Text>
 												</Stack>
 											</CardBody>
 											<Divider />
 											<CardFooter>
 												<ButtonGroup spacing="2">
-													<Counter onAdd={onAdd} />
+													<Counter onAdd={onAdd} stock={item.rating.count}  />
 												</ButtonGroup>
 											</CardFooter>
 										</Card>
