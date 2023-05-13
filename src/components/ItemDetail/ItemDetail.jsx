@@ -47,7 +47,7 @@ export const ItemDetail = ({ item }) => {
           <Divider />
           <CardFooter>
             <ButtonGroup spacing="2">
-              <Counter onAdd={onAdd} stock={item.rating.count} />
+              <Counter onAdd={onAdd} stock={item.count} />
             </ButtonGroup>
           </CardFooter>
         </Card>
