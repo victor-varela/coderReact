@@ -7,7 +7,7 @@ import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 export const ItemDetailContainer = () => {
   //Estado para guardar el producto. Se hace con useParams para capturar el parametro que viene en la ruta el id del producto.
-  const [item, setItem] = useState();
+  const [item, setItem] = useState({});
   const [isloading, setIsLoading] = useState(true);
   const { pid } = useParams();
 
@@ -19,7 +19,7 @@ export const ItemDetailContainer = () => {
       .then((resp) => setItem({id:resp.id, ...resp.data()}))
       .catch((err) => console.log(err))
       .finally(setIsLoading(false));
-  }, []);
+     }, []);
   console.log(item);
 
   //hacer is loading. siempre

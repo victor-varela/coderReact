@@ -18,6 +18,7 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 
 export const ItemDetail = ({ item }) => {
+	console.log('detailcontainer')
   const [isCant, setIsCant] = useState(false);
   const { addToCart } = useCartContext();
   const onAdd = (cantidad) => {
@@ -39,7 +40,7 @@ export const ItemDetail = ({ item }) => {
                 ${item.price}
               </Text>
               <Text color="blue.600" fontSize="2xl">
-                Stock{item.rating.count}
+                Stock{item.count}
               </Text>
             </Stack>
           </CardBody>
