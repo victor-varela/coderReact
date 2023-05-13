@@ -26,6 +26,14 @@ const Cart = () => {
 
   }, 0)
   const totalPrice = calculatePrice
+  const generarOrden=()=>{
+    console.log(cartList)
+    const order = {}
+    order.buyer ={nombre: "victor", phone:"3154", email:"victor@mail.com"}
+    order.items=cartList.map(({id, title, price, cantidad})=>({id, title, price, cantidad}))
+    console.log(cartList)
+    console.log("generando orden", order)
+  }
                                               
   console.log(eliminar)
   console.log(cartList)
@@ -71,6 +79,9 @@ const Cart = () => {
           </Text>
           <Button onClick={vaciarCarrito} variant="solid" colorScheme="blue">
             Vaciar Carrito
+          </Button>
+          <Button onClick={generarOrden} variant="solid" colorScheme="blue">
+            Generar Orden
           </Button>
         </>
       )}

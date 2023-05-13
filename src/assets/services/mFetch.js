@@ -240,6 +240,11 @@ let products = [
       }
     }
   ]
+  products = products.map((product)=>{
+    return{
+            ...product, stock: product.rating.count
+          }})
+ console.log("nuevo array productos", products) 
 //  export const mFetch=()=>{
 //     return new Promise ((res, rej)=>{
 //         setTimeout(()=>{
