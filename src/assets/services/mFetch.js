@@ -1,3 +1,5 @@
+import { addDoc, collection, getFirestore } from "firebase/firestore"
+
 let products = [
     {
       "id": 1,
@@ -245,6 +247,14 @@ let products = [
             ...product, stock: product.rating.count
           }})
  console.log("nuevo array productos", products) 
+  const neWproducts = products.map(({id, ...products})=> products)
+ console.log("array sin id", neWproducts)
+
+ const dbFirestore = getFirestore()
+ const productsCollection = collection(dbFirestore, "products")
+// neWproducts.forEach( async elment =>{addDoc(productsCollection, elment)})
+ 
+
 //  export const mFetch=()=>{
 //     return new Promise ((res, rej)=>{
 //         setTimeout(()=>{
