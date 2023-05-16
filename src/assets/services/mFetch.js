@@ -1,4 +1,5 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore"
+import { initFirebase } from "../../firebase/config"
 
 let products = [
     {
@@ -250,9 +251,11 @@ let products = [
   const neWproducts = products.map(({id, ...products})=> products)
  console.log("array sin id", neWproducts)
 
- const dbFirestore = getFirestore()
- const productsCollection = collection(dbFirestore, "products")
-// neWproducts.forEach( async elment =>{addDoc(productsCollection, elment)})
+//  const dbFirestore = getFirestore()
+//  const productsCollection = collection(dbFirestore, "products")
+// neWproducts.forEach( async elment =>{
+//               addDoc(productsCollection, elment)
+//             });
  
 
 //  export const mFetch=()=>{

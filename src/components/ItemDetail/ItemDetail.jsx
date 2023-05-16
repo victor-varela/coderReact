@@ -22,6 +22,7 @@ export const ItemDetail = ({ item }) => {
   const { addToCart } = useCartContext();
   const onAdd = (cantidad) => {
     // { ...item, cantidad }
+    console.log("agregar")
     addToCart(item, cantidad);
     setIsCant(true);
   };
@@ -46,7 +47,7 @@ export const ItemDetail = ({ item }) => {
           <Divider />
           <CardFooter>
             <ButtonGroup spacing="2">
-              <Counter onAdd={onAdd} stock={item.count} />
+              <Counter onAdd={onAdd} stock={item.stock} />
             </ButtonGroup>
           </CardFooter>
         </Card>

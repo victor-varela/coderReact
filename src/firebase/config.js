@@ -12,8 +12,8 @@ const firebaseConfig = {
   projectId: "coderecommercevictorvarela",
   storageBucket: "coderecommercevictorvarela.appspot.com",
   messagingSenderId: "288539078706",
-  appId: "1:288539078706:web:2325c34f8e577cfe914c2b",
-  measurementId: "G-XF3D0QM992"
+  appId: "1:288539078706:web:6ac2be1421e507f5914c2b",
+  measurementId: "G-KMQWRXBWNV"
 };
 
 // Initialize Firebase
