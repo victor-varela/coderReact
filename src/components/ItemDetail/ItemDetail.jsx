@@ -18,7 +18,6 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 
 export const ItemDetail = ({ item }) => {
-	console.log('detailcontainer')
   const [isCant, setIsCant] = useState(false);
   const { addToCart } = useCartContext();
   const onAdd = (cantidad) => {

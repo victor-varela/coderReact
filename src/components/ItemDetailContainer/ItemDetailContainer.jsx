@@ -14,7 +14,7 @@ export const ItemDetailContainer = () => {
   //useEffect traer el producto, guardar en el estado
   useEffect(() => {
     const dbFirestore = getFirestore();
-    const queryDoc = doc(dbFirestore, "productos", pid);
+    const queryDoc = doc(dbFirestore, "products", pid);
     getDoc(queryDoc)
       .then((resp) => setItem({id:resp.id, ...resp.data()}))
       .catch((err) => console.log(err))

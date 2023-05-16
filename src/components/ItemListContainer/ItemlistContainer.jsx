@@ -23,14 +23,14 @@ export const ItemlistContainer = ({ greeting }) => {
         //Aca debe estar la llamada a la API porque es un componente contenedor, y estos tipos de componenetes son los que manejan la logica y los estados y las llamadas a los servicios externos (API). Estas llamadas pueden causar efectos secundarios y por ello se manejan con useEffect
         useEffect(() => {
           const dbFirestore = getFirestore();
-          const queryCollection = collection(dbFirestore, "productos");
-         if (!cid) {
+          const queryCollection = collection(dbFirestore, "prueba");
+          if (!cid) {
             getDocs(queryCollection)
               .then(resp=>setProducts(resp.docs.map(producto=>({id:producto.id, ...producto.data()}))))
               .catch(err=>console.log(err))
               .finally(setIsLoading(false))
         
-                }else{
+              }else{
                   const queryCollectionFiltered= query(queryCollection, where("category","==", cid))
                   getDocs(queryCollectionFiltered)
                   .then(resp=>setProducts(resp.docs.map(producto=>({id:producto.id, ...producto.data()}))))

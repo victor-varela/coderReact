@@ -12,6 +12,7 @@ import {
   ButtonGroup,
   Image,
 } from "@chakra-ui/react";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 const Cart = () => {
   const { cartList, vaciarCarrito, eliminar } = useCartContext();
   const [isCartEmpty, setIsCartEmpty] = useState(true);
@@ -31,6 +32,12 @@ const Cart = () => {
     const order = {}
     order.buyer ={nombre: "victor", phone:"3154", email:"victor@mail.com"}
     order.items=cartList.map(({id, title, price, cantidad})=>({id, title, price, cantidad}))
+    order.total = totalPrice
+    const dbFirestore     = getFirestore()  
+    const ordersCollection =collection(dbFirestore, 'orders')
+    addDoc(ordersCollection, order)
+      .then(resp=>console.log(resp))
+
     console.log(cartList)
     console.log("generando orden", order)
   }
