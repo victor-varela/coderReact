@@ -11,6 +11,7 @@ import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetail
 import Cart from "./components/CartContainer/Cart";
 import {  CartContextProvider } from "./context/CartContext";
 import { Footer } from "./components/Footer/Footer";
+import CheckOut from "./components/CheckOut/CheckOut";
 
 
 function App() {

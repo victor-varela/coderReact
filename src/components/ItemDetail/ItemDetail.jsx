@@ -22,7 +22,7 @@ export const ItemDetail = ({ item }) => {
   const { addToCart } = useCartContext();
   const onAdd = (cantidad) => {
     // { ...item, cantidad }
-    console.log("agregar")
+    console.log("agregar");
     addToCart(item, cantidad);
     setIsCant(true);
   };
@@ -40,7 +40,7 @@ export const ItemDetail = ({ item }) => {
                 ${item.price}
               </Text>
               <Text color="blue.600" fontSize="2xl">
-                Stock{item.count}
+                Stock{item.stock}
               </Text>
             </Stack>
           </CardBody>
@@ -62,6 +62,9 @@ export const ItemDetail = ({ item }) => {
                 <Text>{item.description}</Text>
                 <Text color="blue.600" fontSize="2xl">
                   ${item.price}
+                </Text>
+                <Text color="blue.600" fontSize="2xl">
+                  Stock{item.stock}
                 </Text>
               </Stack>
             </CardBody>
