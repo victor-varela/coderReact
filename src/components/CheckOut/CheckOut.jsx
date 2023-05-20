@@ -16,8 +16,7 @@ import {
   Input,
 } from "@chakra-ui/react";
 
-const CheckOut = ({createOrder, dataForm}) => {
-    console.log(dataForm)
+const CheckOut = ({createOrder, dataForm, handleOnChange}) => {
     
   return (
     <form id="form" onSubmit={createOrder}>

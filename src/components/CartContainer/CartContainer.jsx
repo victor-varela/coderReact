@@ -103,106 +103,11 @@ const CartContainer = () => {
       ) : (
         <>
           <CartItemList  totalPrice={totalPrice}/>
-          {/* {cartList.map((item) => (
-            <Card maxW="sm" m="auto" mb={100} align="center" key={item.id}>
-              <CardBody>
-                <Image src={item.image} alt="" borderRadius="lg" />
-
-                <Stack mt="6" spacing="3">
-                  <Heading size="md">{item.title}</Heading>
-
-                  <Text color="blue.600" fontSize="2xl">
-                    ${item.price * item.quantity}
-                  </Text>
-
-                  <Text color="blue.600" fontSize="2xl">
-                    Cantidad:{item.quantity}
-                  </Text>
-                </Stack>
-              </CardBody>
-              <Divider />
-              <CardFooter>
-                <ButtonGroup spacing="2">
-                  <Button
-                    onClick={() => remove(item.id)}
-                    variant="solid"
-                    colorScheme="blue"
-                  >
-                    Eliminar
-                  </Button> 
-                </ButtonGroup>
-              </CardFooter>
-            </Card>
-          ))} */}
-
-          {/* <Text color="blue.600" fontSize="2xl">
-            Precio Total:{totalPrice}
-          </Text>
-          <Text color="blue.600" fontSize="2xl">
-            Cantidad Total de Articulos:{totalQuantity()}
-          </Text>
-          <Button onClick={emptyCart} variant="solid" colorScheme="blue">
-            Vaciar Carrito
-          </Button> */}
           <CheckOut 
           createOrder={createOrder} 
-          dataForm={dataForm} />
-          {/* <form id="form" onSubmit={createOrder}>
-            <FormControl isRequired>
-              <FormLabel>Email</FormLabel>
-              <Input
-                type="email"
-                name="email"
-                value={dataForm.email}
-                onChange={handleOnChange}
-                placeholder="Ingrese su email"
-                border="2px"
-                borderColor="black"
-              />
-
-              <FormLabel>Reingrese su Email</FormLabel>
-              <Input
-                type="email"
-                name="emailMatch"
-                value={dataForm.emailMatch}
-                onChange={handleOnChange}
-                placeholder="Reingrese su email"
-                border="2px"
-                borderColor="black"
-              />
-
-              <FormLabel>Nombre</FormLabel>
-              <Input
-                type="text"
-                name="name"
-                value={dataForm.name}
-                onChange={handleOnChange}
-                placeholder="Ingrese su nombre"
-                border="2px"
-                borderColor="black"
-              />
-
-              <FormLabel>Telefono</FormLabel>
-              <Input
-                type="number"
-                name="phone"
-                value={dataForm.phone}
-                onChange={handleOnChange}
-                placeholder="Ingrese su telefono"
-                border="2px"
-                borderColor="black"
-              />
-            </FormControl>
-            <Button
-              mt={5}
-              type="submit"
-              color={"white"}
-              width="40"
-              backgroundColor={"blue.300"}
-            >
-              Finalizar
-            </Button>
-          </form> */}
+          dataForm={dataForm}
+          handleOnChange={handleOnChange}
+           />
         </>
       )}
     </>
