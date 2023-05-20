@@ -10,8 +10,10 @@ import {
   Button,
   ButtonGroup,
   Image,
-} from "@chakra-ui/react";
-const Item = ({producto: { id, image, title, price }}) => {
+} from "@chakra-ui/react"
+import { memo } from "react";
+
+const Item = memo ( ({product: { id, image, title, price }}) => {
   return (
     <Card maxW="sm" m="auto" mb={100} align="center" key={id}>
       <CardBody>
@@ -28,10 +30,6 @@ const Item = ({producto: { id, image, title, price }}) => {
       <Divider />
       <CardFooter>
         <ButtonGroup spacing="2">
-          <Button variant="solid" colorScheme="blue">
-            Comprar
-          </Button>
-          {/* //añadir Link de react router DOM */}
           <Link to={`/detail/${id}`}>
             <Button variant="ghost" colorScheme="blue">
               Ver Detalles
@@ -40,7 +38,7 @@ const Item = ({producto: { id, image, title, price }}) => {
         </ButtonGroup>
       </CardFooter>
     </Card>
-  );
-};
+  )
+})
 
 export default Item;

@@ -8,9 +8,9 @@ import { initFirebase } from './firebase/config'
 initFirebase()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  
     <ChakraBaseProvider>
       <App />
     </ChakraBaseProvider>
-  </React.StrictMode>,
+  
 )

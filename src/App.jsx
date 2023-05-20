@@ -8,10 +8,9 @@ import {
   Navigate,
 } from "react-router-dom";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
-import Cart from "./components/CartContainer/Cart";
+import CartContainer from "./components/CartContainer/CartContainer";
 import {  CartContextProvider } from "./context/CartContext";
 import { Footer } from "./components/Footer/Footer";
-import CheckOut from "./components/CheckOut/CheckOut";
 
 
 function App() {
@@ -24,7 +23,7 @@ function App() {
           <Route path="/categoria/:cid" element={<ItemlistContainer />} />
           <Route path="/detail/:pid" element={<ItemDetailContainer />} />
           <Route path="*" element={<Navigate to="/" />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<CartContainer />} />
         </Routes>
         <Footer />
       </Router>
