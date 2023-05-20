@@ -14,19 +14,19 @@ export const ItemlistContainer = ({ greeting }) => {
   const [isloading, setIsLoading] = useState(true);
   const { cid } = useParams();
   useEffect(() => {
-    const dbFirestore = getFirestore();
-    const queryCollection = collection(dbFirestore, "products");
-    const queryCollectionFiltered = !cid
-      ? queryCollection
-      : query(queryCollection, where("category", "==", cid));
-    getDocs(queryCollectionFiltered)
-      .then((resp) =>
-        setProducts(
-          resp.docs.map((producto) => ({ id: producto.id, ...producto.data() }))
-        )
-      )
-      .catch((err) => console.log(err))
-      // .finally(setIsLoading(false));
+        const dbFirestore = getFirestore();
+        const queryCollection = collection(dbFirestore, "products");
+        const queryCollectionFiltered = !cid
+          ? queryCollection
+          : query(queryCollection, where("category", "==", cid));
+        getDocs(queryCollectionFiltered)
+          .then((resp) =>
+            setProducts(
+              resp.docs.map((producto) => ({ id: producto.id, ...producto.data() }))
+            )
+          )
+          .catch((err) => console.log(err))
+          .finally(setIsLoading(false));
   }, [cid]);
 
   return (
