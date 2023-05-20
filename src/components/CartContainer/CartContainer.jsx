@@ -1,20 +1,5 @@
 import { useEffect, useState } from "react";
 import { useCartContext } from "../../context/CartContext";
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  Stack,
-  Heading,
-  Text,
-  Divider,
-  Button,
-  ButtonGroup,
-  Image,
-  FormControl,
-  FormLabel,
-  Input,
-} from "@chakra-ui/react";
 import "../../styles/styles.css";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { Link } from "react-router-dom";
