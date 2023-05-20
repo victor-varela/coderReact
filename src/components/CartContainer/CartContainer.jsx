@@ -5,6 +5,7 @@ import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { Link } from "react-router-dom";
 import CartItemList from "../CartItemList/CartItemList";
 import CheckOut from "../CheckOut/CheckOut";
+import { Button } from "@chakra-ui/react";
 
 const CartContainer = () => {
   const { cartList, emptyCart, remove, totalQuantity } = useCartContext();

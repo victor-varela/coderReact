@@ -26,7 +26,7 @@ export const ItemlistContainer = ({ greeting }) => {
         )
       )
       .catch((err) => console.log(err))
-      .finally(setIsLoading(false));
+      // .finally(setIsLoading(false));
   }, [cid]);
 
   return (
