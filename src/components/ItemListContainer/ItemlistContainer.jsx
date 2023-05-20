@@ -37,7 +37,7 @@ export const ItemlistContainer = ({ greeting }) => {
           isIndeterminate
           color="pink.300"
           value={30}
-          size="150px"
+          size="250px"
         />
       ) : (
         <ItemList products={products} />
