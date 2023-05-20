@@ -15,7 +15,11 @@ export const ItemDetailContainer = () => {
     getDoc(queryDoc)
       .then((resp) => setItem({id:resp.id, ...resp.data()}))
       .catch((err) => console.log(err))
-      .finally(setIsLoading(false));
+      .finally(
+        setTimeout(() => {
+          setIsLoading(false);
+          
+        }, 2000))
      }, []);
   
   return (
@@ -23,7 +27,7 @@ export const ItemDetailContainer = () => {
       {isloading ? (
         <CircularProgress
           isIndeterminate
-          color="blue.300"
+          color="pink.300"
           value={30}
           size="120px"
         />
