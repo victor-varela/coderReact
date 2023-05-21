@@ -10,18 +10,18 @@ import {
   Button,
   ButtonGroup,
   Image,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
 import { memo } from "react";
 
-const Item = memo ( ({product: { id, image, title, price }}) => {
+const Item = memo(({ product: { id, image, title, price } }) => {
   return (
     <Card maxW="sm" m="auto" mb={100} align="center" key={id}>
       <CardBody>
-        <Image src={image} alt="" borderRadius="lg" />
-
+        <Link to={`/detail/${id}`}>
+          <Image src={image} alt="" borderRadius="lg" />
+        </Link>
         <Stack mt="6" spacing="3">
           <Heading size="md">{title}</Heading>
-
           <Text color="blue.600" fontSize="2xl">
             ${price}
           </Text>
@@ -38,7 +38,7 @@ const Item = memo ( ({product: { id, image, title, price }}) => {
         </ButtonGroup>
       </CardFooter>
     </Card>
-  )
-})
+  );
+});
 
 export default Item;

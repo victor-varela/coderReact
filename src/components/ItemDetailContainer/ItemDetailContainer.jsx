@@ -23,7 +23,7 @@ export const ItemDetailContainer = () => {
      }, []);
   
   return (
-    <div>
+    <div style={{minHeight:"200px"}}>
       {isloading ? (
         <CircularProgress
           isIndeterminate
