@@ -15,18 +15,18 @@
   color: #ffdb99;
 }
 .shipment-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #1f0f53;
-    color: #ffdb99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1f0f53;
+  color: #ffdb99;
 }
-.checkOut-div{
-  background-color:#1f0f53 ;
+.checkOut-div {
+  background-color: #1f0f53;
 }
-.checkOut-div h2{
-  color:white;
+.checkOut-div h2 {
+  color: white;
 }
 .footer {
   display: flex;
@@ -41,24 +41,14 @@
   height: 60%;
   border-radius: 8px;
 }
-h1{
+h1 {
   color: #ffdb99;
 }
 
-@media (max-width:768px){
-  .footer, .image {
-    flex-direction: column; 
+@media (max-width: 768px) {
+  .footer,
+  .image {
+    flex-direction: column;
     justify-content: space-between;
-    
-    
-    
-  
   }
 }
-/* @media (max-width:768px){
-  .image{
-    height: 10%;
-  }
-} */
-
-
