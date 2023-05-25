@@ -1,54 +1,10 @@
-.payment-div {
-  display: flex;
-  flex-direction: column;
-  background-color: #1f0f53;
-  align-items: center;
-  justify-content: center;
-  color: #ffdb99;
+h1{
+    color:#ffdb99
 }
-.contact-div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #1f0f53;
-  color: #ffdb99;
-}
-.shipment-div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #1f0f53;
-  color: #ffdb99;
-}
-.checkOut-div {
-  background-color: #1f0f53;
-}
-.checkOut-div h2 {
-  color: white;
-}
-.footer {
-  display: flex;
-  justify-content: space-around;
-  background-color: #1f0f53;
-  color: #ffdb99;
-  margin-top: 40px;
-  height: 20vh;
+.checkOut-div{
+    background-color: #1f0f53;
 }
 
-.image {
-  height: 60%;
-  border-radius: 8px;
-}
-h1 {
-  color: #ffdb99;
-}
-
-@media (max-width: 768px) {
-  .footer,
-  .image {
-    flex-direction: column;
-    justify-content: space-between;
-  }
+.checkOut-div, .h2{
+    color: white;
 }

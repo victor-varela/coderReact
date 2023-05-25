@@ -28,17 +28,17 @@ export function NavBar() {
           <Image src={logo} alt="Logo" boxSize={"100px"} />
         </NavLink>
       </Flex>
-
-      <Box display={{ base: "block", md: "none" }}>
-        <IconButton
-          onClick={onToggle}
-          icon={<HiMenu />}
-          variant="outline"
-          colorScheme="white"
-          boxSize={"100px"}
-        />
-      </Box>
-      <CartWidget />
+      <Flex as="nav" align="center" justify="right" wrap="wrap" padding={4}>
+        <Box display={{ base: "block", md: "none" }}>
+          <IconButton
+            onClick={onToggle}
+            icon={<HiMenu size={"70px"} />}
+            variant="outline"
+            colorScheme="white"
+          />
+        </Box>
+        <CartWidget />
+      </Flex>
       <Box
         display={{ base: isOpen ? "block" : "none", md: "flex" }}
         width={{ base: "full", md: "auto" }}

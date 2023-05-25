@@ -1,24 +1,34 @@
-import "../../styles/styles.css";
-import payment from "../../assets/img/payment.jpg";
-import social from "../../assets/img/social.jpg";
-import ship from "../../assets/img/ship.jpg";
-import { Flex } from "@chakra-ui/react";
+import { Box, Grid, Text } from "@chakra-ui/react";
+import { FaShippingFast, FaCreditCard, FaPhone } from 'react-icons/fa';
 
-export const Footer = () => {
+function Footer() {
   return (
-    <div className="footer">
-      <div className="payment-div">
-        <img className="image" src={payment} />
-        <p>aceptamos todos los medios de pago</p>
-      </div>
-      <div className="contact-div">
-        <img className="image" src={social} />
-        <p>contacto@awesome.com</p>
-      </div>
-      <div className="shipment-div">
-        <img className="image" src={ship} />
-        <p>envios a todo el pais</p>
-      </div>
-    </div>
+    <Box bg="#1f0f53" py={8} mt={4}>
+      <Grid templateColumns={{ base: "1fr", sm: "repeat(3, 1fr)" }} gap={6} maxW="800px" mx="auto"
+          alignItems="center"
+      >
+        <Box
+         textAlign="center" color="#ffdb99" display="flex" flexDirection="column" alignItems="center"
+         >
+          <FaShippingFast size={32} color="white" />
+          <Text mt={2} fontWeight="bold">Envíos</Text>
+        </Box>
+        <Box textAlign="center" color="#ffdb99"
+              display="flex" flexDirection="column" alignItems="center"
+        >
+          <FaCreditCard size={32} color="white" />
+          <Text mt={2} fontWeight="bold">Formas de Pago</Text>
+        </Box>
+        <Box textAlign="center" color="#ffdb99"
+              display="flex" flexDirection="column" alignItems="center"
+        >
+          <FaPhone size={32} color="white" />
+          <Text mt={2} fontWeight="bold">Contacto</Text>
+        </Box>
+      </Grid>
+    </Box>
   );
-};
+}
+
+export default Footer;
+

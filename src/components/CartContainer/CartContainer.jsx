@@ -81,10 +81,13 @@ const CartContainer = () => {
       }
       {isCartEmpty ? (
         <>
-          <h1>El Carrito esta Vacio</h1>
+          <h1 style={{marginBottom:"50px"}}>El Carrito esta Vacio</h1>
           <Link to="/">
             <Button>Seguir Comprando</Button>
           </Link>
+          <div style={{ minHeight: "300px" }}>
+
+          </div>
         </>
       ) : (
         <>

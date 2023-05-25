@@ -10,7 +10,7 @@ import {
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import CartContainer from "./components/CartContainer/CartContainer";
 import {  CartContextProvider } from "./context/CartContext";
-import { Footer } from "./components/Footer/Footer";
+import Footer  from "./components/Footer/Footer";
 
 
 function App() {
