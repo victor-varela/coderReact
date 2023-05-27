@@ -1,22 +1,20 @@
 import { useEffect, useState } from "react";
 import { useCartContext } from "../../context/CartContext";
-import "../../styles/styles.css";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import { Link } from "react-router-dom";
 import CartItemList from "../CartItemList/CartItemList";
 import CheckOut from "../CheckOut/CheckOut";
-import { Button } from "@chakra-ui/react";
+import { SuccesfulPurchase } from "../SuccesfulPurchase/SuccesfulPurchase";
+import { EmptyCartMessage } from "../EmptyCartMessage/EmptyCartMessage";
 
 const CartContainer = () => {
-  const { cartList, emptyCart, remove, totalQuantity } = useCartContext();
+  const { cartList, emptyCart } = useCartContext();
   const [isCartEmpty, setIsCartEmpty] = useState(true);
-  const [idOrder, setIdOrder]= useState('')
+  const [idOrder, setIdOrder] = useState("");
 
   useEffect(() => {
     cartList.length > 0 ? setIsCartEmpty(false) : setIsCartEmpty(true);
+  }, [cartList]);
 
-    }, [cartList]);
-    
   const [dataForm, setDataForm] = useState({
     name: "",
     emailMatch: "",
@@ -34,7 +32,7 @@ const CartContainer = () => {
   const calculatePrice = cartList.reduce((acc, item) => {
     return acc + item.price * item.quantity;
   }, 0);
-  
+
   const totalPrice = calculatePrice;
 
   const validateMail = (dataForm) => {
@@ -50,53 +48,46 @@ const CartContainer = () => {
     evt.preventDefault();
     const isValid = validateMail(dataForm);
     if (isValid) {
-          const { emailMatch, ...newDataForm } = dataForm;
-          const order = {};
-          order.buyer = { newDataForm };
-          order.items = cartList.map(({ id, title, price, quantity }) => ({
-            id,
-            title,
-            price,
-            quantity,
-          }));
-          order.total = totalPrice;
-          
-          const dbFirestore = getFirestore();
-          const ordersCollection = collection(dbFirestore, "orders");
-          addDoc(ordersCollection, order)
-            .then((resp) =>setIdOrder(resp.id))
-            .catch((err) => console.log(err));
-            setDataForm({ email: "", emailMatch: "", name: "", phone: "" });
-            emptyCart();
+      const { emailMatch, ...newDataForm } = dataForm;
+      const order = {};
+      order.buyer = { newDataForm };
+      order.items = cartList.map(({ id, title, price, quantity }) => ({
+        id,
+        title,
+        price,
+        quantity,
+      }));
+      order.total = totalPrice;
+
+      const dbFirestore = getFirestore();
+      const ordersCollection = collection(dbFirestore, "orders");
+      addDoc(ordersCollection, order)
+        .then((resp) => {
+          setIdOrder(resp.id);
+        })
+
+        .catch((err) => console.log(err));
+      setDataForm({ email: "", emailMatch: "", name: "", phone: "" });
+      emptyCart();
     }
   };
 
   return (
     <>
-      {idOrder.length !== 0 &&
-       <div className="checkOut-div">  
-        <h2>COMPRA EXITOSA</h2>
-        <h2>EL ID DE COMPRA ES: {idOrder}</h2>
-      </div> 
-      }
+      {idOrder.length !== 0 && <SuccesfulPurchase idOrder={idOrder} />}
+
       {isCartEmpty ? (
         <>
-          <h1 style={{marginBottom:"50px"}}>El Carrito esta Vacio</h1>
-          <Link to="/">
-            <Button>Seguir Comprando</Button>
-          </Link>
-          <div style={{ minHeight: "300px" }}>
-
-          </div>
+          <EmptyCartMessage />
         </>
       ) : (
         <>
-          <CartItemList  totalPrice={totalPrice}/>
-          <CheckOut 
-          createOrder={createOrder} 
-          dataForm={dataForm}
-          handleOnChange={handleOnChange}
-           />
+          <CartItemList totalPrice={totalPrice} />
+          <CheckOut
+            createOrder={createOrder}
+            dataForm={dataForm}
+            handleOnChange={handleOnChange}
+          />
         </>
       )}
     </>
