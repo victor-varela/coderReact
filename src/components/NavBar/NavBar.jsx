@@ -14,7 +14,14 @@ import { CartWidget } from "../CartWidget/CartWidget";
 
 export function NavBar() {
   const { isOpen, onToggle } = useDisclosure();
+  const categories = [
 
+    { id: "1", name: "Electronica", description: "electronics" },
+    { id: "2", name: "Ropa Masculina", description: "men's clothing" },
+    { id: "3", name: "Ropa Femenina", description: "women's clothing" },
+    { id: "4", name: "Joyeria", description: "jewelery" },
+
+     ];
   return (
     <Flex
       as="nav"
@@ -46,26 +53,13 @@ export function NavBar() {
         justifyContent="center"
         flexGrow={1}
       >
-        <NavLink to="/categoria/electronics">
-          <Button p="10px" colorScheme="blue" mr={2}>
-            Electronica
-          </Button>
-        </NavLink>
-        <NavLink to="/categoria/women's clothing">
-          <Button p="10px" colorScheme="blue" mr={2}>
-            Ropa Femenina
-          </Button>
-        </NavLink>
-        <NavLink to="/categoria/men's clothing">
-          <Button p="10px" colorScheme="blue" mr={2}>
-            Ropa Masculina
-          </Button>
-        </NavLink>
-        <NavLink to="/categoria/jewelery">
-          <Button p="10px" colorScheme="blue" mr={2}>
-            Joyeria
-          </Button>
-        </NavLink>
+        {categories.map((category) => (
+          <NavLink key={categories.id} to={`categoria/${category.description}`}>
+            <Button p="10px" colorScheme="blue" mr={2}>
+              {category.name}
+            </Button>
+          </NavLink>
+        ))}
       </Box>
     </Flex>
   );
